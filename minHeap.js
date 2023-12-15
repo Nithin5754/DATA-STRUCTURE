@@ -59,3 +59,28 @@ class MinHeap{
     return smallest;
   }
 }
+
+
+
+function heapSort(array) {
+
+  let sortMin=new MinHeap()
+
+  for(let i=0;i<array.length;i++){
+     sortMin.insert(array[i])
+  }
+
+  let sorted=[]
+
+  while (sortMin.heap.length) {
+
+    sorted.push(sortMin.extractMin())
+    
+  }
+
+  return sorted
+  
+}
+
+let array=[56,76,43,9,2,8,1,45]
+console.log(heapSort(array));
