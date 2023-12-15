@@ -187,6 +187,20 @@ deleteNode(root,value){
 
   }
 
+  search(root,value){
+    if(!root){
+      return false
+    }
+    if(value<root.value){
+     return this.search(root.left,value)
+    }else if(value>root.value){
+      return this.search(root.right,value)
+    }else if(value===root.value){
+      return true
+    }
+  }
+
+
 }
 
 
@@ -204,3 +218,4 @@ console.log(tree);
 console.log(tree.perOrder());
 
 console.log(tree.closest(8));
+console.log(tree.search(tree.root,7),"got sucessfully");

@@ -4,7 +4,7 @@
   "description": "",
   "main": "binarySearchTree.js",
   "scripts": {
-    "start": "nodemon graph.js"
+    "start": "nodemon binarySearchTree.js"
   },
   "keywords": [],
   "author": "",
