@@ -166,6 +166,7 @@ deleteNode(root,value){
       return this.closerHelper(this.root,target,this.root.value)
     }
   }
+  //closest helper
 
   closerHelper(root,target,closer){
     if(root===null){
