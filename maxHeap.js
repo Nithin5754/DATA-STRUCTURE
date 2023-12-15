@@ -65,21 +65,31 @@ class MaxHeap{
 
 
 
-let tree=new MaxHeap()
-tree.insert(30)
-tree.insert(2)
-tree.insert(5)
-tree.insert(74)
-tree.insert(15)
-tree.insert(700)
+function Maxsorted(array) {
+   let maxheap=new MaxHeap()
+  for(let i=0;i<array.length;i++){
+    maxheap.insert(array[i])
+  }
+  let sorted=[]
+
+  while (maxheap.heap.length) {
+
+    sorted.push(maxheap.extract())
+    
+  }
+
+return sorted
+
+}
+let array=[4,5,6,3,7,8,9,12]
+console.log(Maxsorted(array));
 
 
 
-console.log(tree);
 
-console.log(tree.extract());
-console.log(tree.extract());
-console.log(tree.extract());
+
+
+
 
 
 

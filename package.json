@@ -4,7 +4,7 @@
   "description": "",
   "main": "binarySearchTree.js",
   "scripts": {
-    "start": "nodemon minHeap.js"
+    "start": "nodemon maxHeap.js"
   },
   "keywords": [],
   "author": "",
