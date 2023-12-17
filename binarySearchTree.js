@@ -207,9 +207,9 @@ deleteNode(root,value){
 let tree=new BinarySearchTree()
 tree.insert(30)
 tree.insert(2)
-tree.insert(5)
+tree.insert(50)
 tree.insert(74)
-tree.insert(15)
+tree.insert(10)
 tree.insert(7)
 
 tree.delete(30)
@@ -218,4 +218,4 @@ console.log(tree);
 console.log(tree.perOrder());
 
 console.log(tree.closest(8));
-console.log(tree.search(tree.root,7),"got sucessfully");
+console.log(tree.search(tree.root,74),"got sucessfull");
