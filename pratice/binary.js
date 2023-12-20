@@ -183,18 +183,19 @@ class bst{
     }
 
     if(target<root.value){
-      return this.closestHelper(root.left,target.closest)
+this.closestHelper(root.left,target.closest)
     }else if(target >root.value){
       return this.closestHelper(root.right,target.closest)
     }else{
       return closest
     }
    }
+ 
 }
 
 
 
-let tree=new BinarySearchTree()
+let tree=new bst()
 tree.insert(30)
 tree.insert(2)
 tree.insert(5)
@@ -205,7 +206,7 @@ tree.insert(7)
 tree.delete(30)
 
 console.log(tree);
-console.log(tree.perOrder());
+console.log(tree.preOrder());
 
 console.log(tree.closest(8));
 console.log(tree.search(tree.root,7),"got sucessfully");

@@ -76,7 +76,7 @@ return console.log("dfs",data);
 
         data.push(current)
 
-        for (const neighbour of this.graph[current]) {
+        for (const neighbour of this.graph) {
           if(!visited.has(neighbour)){
             visited.add(neighbour)
             queue.push(neighbour)

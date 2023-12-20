@@ -82,5 +82,30 @@ function heapSort(array) {
   
 }
 
-let array=[56,76,43,9,2,8,1,45]
-console.log(heapSort(array));
+
+class PriorityQueue extends  MinHeap
+  {
+  enqueue(element, priority) {
+    super.insert({ element, priority });
+  }
+
+  dequeue() {
+    const maxElement = super.extractMin();
+    return maxElement ? maxElement.element : null;
+  }
+
+
+}
+
+// let array=[56,76,43,9,2,8,1,45]
+// console.log(heapSort(array));
+
+
+const priorityQueue = new PriorityQueue();
+priorityQueue.enqueue('Task 1', 3);
+priorityQueue.enqueue('Task 2', 1);
+priorityQueue.enqueue('Task 3', 2);
+
+console.log(priorityQueue.dequeue()); // Output: Task 2 (highest priority)
+console.log(priorityQueue.dequeue()); // Output: Task 3
+console.log(priorityQueue.dequeue()); // Output: Task 1

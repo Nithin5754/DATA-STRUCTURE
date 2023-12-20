@@ -39,8 +39,34 @@ class Graph{
   }
   display(){
     for(let vertex in this.graph){
-      console.log(vertex+"---."+[...this.graph[vertex]]);
+      console.log(vertex+"--->"+[...this.graph[vertex]]);
     }
+  }
+
+  dfs(start){
+    let stack=[start]
+    let visited=new Set([start])
+    let data=[]
+
+    while (stack.length) {
+      let current=stack.pop()
+      data.push(current)
+
+      for(let neighbour in this.graph[current]){
+        if(!visited.has(neighbour)){
+          visited.add(neighbour)
+          stack.push(neighbour)
+        }
+      }
+      
+    }
+    console.log('data',data);
+  }
+
+  bfs(start){
+    let queue=[start]
+
+    let current =data.shilf()
   }
 }
 
@@ -63,3 +89,18 @@ node.addEdges("c","a")
 console.log(node.hasEdge("c","a"));
 node.deleteVertex("b")
 node.display()
+
+
+
+function bfs(){
+  let stack=[]
+  stack.push(root)
+
+  let data=[]
+  while(stack.length){
+    let current=stack.shift()
+    data.push(current)
+
+    current.left&&stack.push(current.left)
+  }
+}
