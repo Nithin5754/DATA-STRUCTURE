@@ -54,7 +54,9 @@ class Trie{
   }
 removeHelper(node,word,index){
   if(index===word.length){
-    return null
+    node.end=false
+    return
+
   }
   let childNode=node.children[word[index]]
   if(childNode){
@@ -90,7 +92,7 @@ tries.insert("Cat");
 tries.insert("nithi");
 tries.insert("nithin");
 console.log(tries.search("nithi"));
-tries.remove("nithin")
+tries.remove("Cat")
 console.log("Words starting with 'n':");
-tries.startWith("C");
-// tries.print()
+tries.startWith("ni");
+tries.print()
