@@ -91,16 +91,3 @@ node.deleteVertex("b")
 node.display()
 
 
-
-function bfs(){
-  let stack=[]
-  stack.push(root)
-
-  let data=[]
-  while(stack.length){
-    let current=stack.shift()
-    data.push(current)
-
-    current.left&&stack.push(current.left)
-  }
-}

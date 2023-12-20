@@ -67,21 +67,7 @@ class MaxHeap {
   }
 }
 
-class PriorityQueue extends MaxHeap{
 
-  enqueue(element,priority){
-    super.insert({element,priority})
-  } 
-  dequeue(){
-    let maxelemnet=super.extract()
-
-    return maxelemnet?maxelemnet.element:null
-  }
-  isEmpty(){
-    return super.isEmpty()
-  }
-
-}
 
 // Example usage:
 const priorityQueue = new PriorityQueue();
