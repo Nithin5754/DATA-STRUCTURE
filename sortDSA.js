@@ -2,46 +2,59 @@ let arr = [20, 6, 7, 54, 3, 267, 5, 4, 2, 33, 45, 2, 54, 12];
 
 // bubble sort
 
-for (let i = 0; i < arr.length; i++) {
-  for (let j = i + 1; j < arr.length; j++) {
-    if (arr[i] > arr[j]) {
-      let temp = arr[i];
-      arr[i] = arr[j];
-      arr[j] = temp;
+function bubbleSort(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] > arr[j]) {
+        let temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+      }
     }
   }
+  return arr
 }
 
-console.log(arr);
-
+const bubble=bubbleSort(arr)
+console.log(bubble);
 // selectionSort
 
-for (let i = 0; i < arr.length; i++) {
-  let smallest = i;
-  for (let j = 1 + i; j < arr.length; j++)
-    if (arr[j] < arr[smallest]) {
-      let temp = arr[j];
-      arr[j] = arr[smallest];
-      arr[smallest] = temp;
-    }
+function selectionSort(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    let smallest = i;
+    for (let j = 1 + i; j < arr.length; j++)
+      if (arr[j] < arr[smallest]) {
+        let temp = arr[j];
+        arr[j] = arr[smallest];
+        arr[smallest] = temp;
+      }
+  }
+
+  return arr
 }
 
-console.log(arr, "hello");
+const selection=selectionSort(arr)
+console.log(selection);
 
 // insertion sort
 
-for (let i = 1; i < arr.length; i++) {
-  let numberToIndex = arr[i];
-  let j = i - 1;
 
-  while (j >= 0 && arr[j] > numberToIndex) {
-    arr[j + 1] = arr[j];
-    j--;
+function insertionSort(arr) {
+  for (let i = 1; i < arr.length; i++) {
+    let numberToIndex = arr[i];
+    let j = i - 1;
+  
+    while (j >= 0 && arr[j] > numberToIndex) {
+      arr[j + 1] = arr[j];
+      j--;
+    }
+    arr[j + 1] = numberToIndex;
   }
-  arr[j + 1] = numberToIndex;
+  return arr
 }
 
-console.log(arr);
+const inserion=insertionSort(arr)
+console.log(inserion);
 
 // mergeSort
 
