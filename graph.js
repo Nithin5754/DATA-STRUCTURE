@@ -20,53 +20,65 @@ class Graph{
     this.graph[vertex1].add(vertex2)
     this.graph[vertex2].add(vertex1)
   }
-  removeEdge(vertex1,vertex2){
-
-    this.graph[vertex1].delete(vertex2)
-    this.graph[vertex2].delete(vertex1)
-  
-  }
-  deleteVertex(vertex){
-    if(!this.graph[vertex]){
-      return null
+  removeEdge(vertex1, vertex2) {
+    if (this.graph[vertex1] && this.graph[vertex2]) {
+      this.graph[vertex1].delete(vertex2);
+      this.graph[vertex2].delete(vertex1);
     }
-    for(let delVertex of this.graph)
-    this.removeEdge(vertex,delVertex)
-  delete this.graph[vertex]
   }
-  hasEdge(vertex1,vertex2){
-    return this.graph[vertex1].has(vertex2)&&this.graph[vertex2].has(vertex1)
+  deleteVertex(vertex) {
+    if (!this.graph[vertex]) {
+      return null;
+    }
+    for (let delVertex in this.graph[vertex]) {
+      this.removeEdge(vertex, delVertex);
+    }
+    delete this.graph[vertex];
+  }
+  hasEdge(vertex1, vertex2) {
+    return this.graph[vertex1]?.has(vertex2) && this.graph[vertex2]?.has(vertex1);
   }
   display(){
     for(let vertex in this.graph){
       console.log(vertex+"--->"+[...this.graph[vertex]]);
     }
   }
-
-  dfs(start){
-    let stack=[start]
-    let visited=new Set([start])
-    let data=[]
+  dfs(start) {
+    let stack = [start];
+    let visited = new Set([start]);
+    let data = [];
 
     while (stack.length) {
-      let current=stack.pop()
-      data.push(current)
+      let current = stack.pop();
+      data.push(current);
 
-      for(let neighbour in this.graph[current]){
-        if(!visited.has(neighbour)){
-          visited.add(neighbour)
-          stack.push(neighbour)
+      for (let neighbour of this.graph[current]) {
+        if (!visited.has(neighbour)) {
+          visited.add(neighbour);
+          stack.push(neighbour);
         }
       }
-      
     }
-    console.log('data',data);
+    console.log('data', data);
   }
 
-  bfs(start){
-    let queue=[start]
+  bfs(start) {
+    let queue = [start];
+    let visited = new Set([start]);
+    let data = [];
 
-    let current =data.shilf()
+    while (queue.length) {
+      let current = queue.shift();
+      data.push(current);
+
+      for (let neighbour of this.graph[current]) {
+        if (!visited.has(neighbour)) {
+          visited.add(neighbour);
+          queue.push(neighbour);
+        }
+      }
+    }
+    console.log('data', data);
   }
 }
 
